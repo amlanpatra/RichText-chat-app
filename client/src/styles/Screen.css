@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+.main-container {
+/* TODO: if size changes */
+    height: 200px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(26, 29, 33);
+}
+
+.container {
+/* TODO: if size changes */
+    height: 170px;
+    width: 780px;
+    background-color: rgba(34, 37, 41);
+    border: 2px solid rgba(98, 101, 103);
+    padding: 18px;
+    border-radius: 15px;
+}
+
+
+.text-formatting {
+    display: flex;
+}
+
+.formatter {
+    cursor: pointer;
+    margin-right: 10px;
+    display:flex;
+    justify-content: center;
+    border-radius: 5px; 
+}
+
+i {
+    color: grey;
+    font-size: 1.8rem;
+}
+
+.divider {
+    border-left: 1px solid grey;
+    color: white;
+    padding-right: 20px;
+}
+
+
+
+
+
+/* inputs */
+.input-container {
+    padding-top: 30px;
+}
+.messageArea {
+    border: none;
+    width: 100%;
+    background: transparent;
+    font-size: 1.5rem;
+    color: rgb(214, 213, 213);
+    text-align: left;
+    resize:none;
+}
+.messageArea:focus {
+    outline: none;
+}
+
+
+
+
+/* bottom bar */
+.bottom-bar {
+    display: flex;
+    padding-top: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.bi-emoji-smile {
+    padding-top: 3px;
+    padding-right: 5px;
+    font-size: 1.5rem;
+}
+.bi-at {
+    font-size:2rem;
+}
+
+.sendMsgIcon{
+    color : white;
+    
+}
+
+.sendButton {
+    background-color: rgb(0,122,90);
+    border-radius: 10px;
+    width:80px;
+    cursor: pointer;
+}
+
+.send {
+/* TODO: if size changes */
+    margin-left:530px;
+}
