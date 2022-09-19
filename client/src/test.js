@@ -1,31 +1,57 @@
-// let arr = [
-//   [2, 3],
-//   //   [0, 6],
-//   //   [2, 10],
-//   //   [12, 17],
-// ];
+// TODO: using embedded tag formatting with start and last index
 
-// let my_string = "Thisofd";
+let arr = [
+  [0, 4],
+  [8, 12],
+  //   [2, 10],
+  //   [12, 17],
+];
 
-// let str2 = "";
-// var tag = "</Strong>";
-// function changeStrong() {
-//   if (tag === "<Strong>") {
-//     tag = "</Strong>";
-//   } else {
-//     tag = "<Strong>";
-//   }
-//   return tag;
-// }
-// for (let i = 0; i < my_string.length; i++) {
-//   str2 +=
-//     arr
-//       .filter((x) => x.includes(i))
-//       .reduce((total) => total + changeStrong(), "") + my_string[i];
-// }
+function formatStr(tagOpen, tagClose, arr, str) {
+  let finalStr = "";
+  str = str + " ";
+  var tag = tagClose;
+  function changeStrong() {
+    if (tag === "<Strong>") {
+      tag = tagOpen;
+    } else {
+      tag = tagClose;
+    }
+    return tag;
+  }
 
-// console.log(str2);
+  for (let i = 0; i < str.length; i++) {
+    finalStr +=
+      arr
+        .filter((x) => x.includes(i))
+        .reduce((total) => total + changeStrong(), "") + str[i];
+  }
 
+  console.log(finalStr); //TODO: comment this
+  return finalStr;
+}
+
+let my_string = "This is gold";
+formatStr("<Strong>", "</Strong>", arr, my_string);
+formatStr("<i>", "</i>", arr, my_string);
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// TODO: using whatsapp formatting
 // var s = "this is *string*";
 
 // var start = -1;
@@ -52,15 +78,3 @@
 // blockQuote
 // CodeSnippet
 // CodeBlock
-
-var quill = new Quill("#editor-container", {
-  modules: {
-    toolbar: [
-      [{ header: [3, 2, false] }],
-      ["bold", "italic", "strike"],
-      ["image", "code-block"],
-    ],
-  },
-  placeholder: "Compose an epic...",
-  theme: "snow", // or 'bubble'
-});

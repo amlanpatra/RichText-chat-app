@@ -1,6 +1,6 @@
 import "./styles/Screen.css";
 import { useState, useEffect } from "react";
-function Screeen({ message }) {
+function Screeen({ message, setMessage, sendMessage }) {
   const [isBold, setisBold] = useState(false);
   const [isItalic, setisItalic] = useState(false);
   const [isStrikethrough, setisStrikethrough] = useState(false);
@@ -86,7 +86,11 @@ function Screeen({ message }) {
                 type="text"
                 placeholder="Chat comes here..."
                 value={message}
-                // onChange={(e) => setMessage(e.target.value)} FIXME: onChange must be active
+                onChange={(e) => setMessage(e.target.value)}
+                // FIXME:onChange
+                // must
+                // be
+                // active
               />
             </div>
           </div>
@@ -107,7 +111,13 @@ function Screeen({ message }) {
             </span>
 
             <span className="send">
-              <button className="sendButton">
+              <button
+                className="sendButton"
+                onClick={() => {
+                  sendMessage();
+                  setMessage("");
+                }}
+              >
                 <i>
                   {" "}
                   <span class="sendMsgIcon material-symbols-outlined">

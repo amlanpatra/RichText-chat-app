@@ -5,11 +5,30 @@ function BoldArr() {
   const [newmessage, setNewMessage] = useState("");
   const [boldArr, setBoldArr] = useState([]);
   const [isBold, setisBold] = useState(false);
-  const pr = (
-    <div>
-      hi<strong> there!</strong>
-    </div>
-  );
+
+  function formatStr(tagOpen, tagClose, arr, str) {
+    let finalStr = "";
+    str = str + " ";
+    var tag = tagClose;
+    function changeStrong() {
+      if (tag === "<Strong>") {
+        tag = tagOpen;
+      } else {
+        tag = tagClose;
+      }
+      return tag;
+    }
+
+    for (let i = 0; i < str.length; i++) {
+      finalStr +=
+        arr
+          .filter((x) => x.includes(i))
+          .reduce((total) => total + changeStrong(), "") + str[i];
+    }
+    console.log(finalStr); //TODO: comment this
+    return finalStr;
+  }
+
   useEffect(() => {
     if (isBold) {
       var last = message.length - 1;
@@ -22,7 +41,9 @@ function BoldArr() {
     }
     console.log(boldArr);
     // renderMessage();
-    setMessage(newmessage);
+    const msg = formatStr("<strong>", "</strong>", boldArr, message);
+    // setMessage(msg);
+    // setBoldArr([]);
   });
 
   const renderMessage = () => {
@@ -46,6 +67,9 @@ function BoldArr() {
           newBoldarr.pop();
           setBoldArr(newBoldarr);
         } else {
+          const newBoldarr = boldArr;
+          newBoldarr[newBoldarr.length - 1][1] = rightValueOfLastIndex + 1;
+          setBoldArr(newBoldarr);
         }
       }
       setisBold(false);
@@ -56,7 +80,7 @@ function BoldArr() {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <div className="input-block">
           <textarea
             rows="5"
@@ -69,10 +93,9 @@ function BoldArr() {
         </div>
 
         <div>isBold : {isBold ? "True" : "False"}</div>
-        {/* <div>Boldarray : {boldArr}</div> */}
         <div>Message : {message}</div>
-        <div>{pr}</div>
-      </div>
+        <div>NewMessage : {newmessage}</div>
+      </div> */}
       <Screen message={message} />
     </div>
   );
