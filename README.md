@@ -8,9 +8,9 @@ Web chat app with RichText feature built using ReactJS and NodeJS
 
 1. Install [node](https://nodejs.org/en/) : You should set up node environment to install node modules and ReactJS
 
-2. Change to _client_ directory and run `npm init` followed by `npm install` and then `npm start`
+2. Change to _client_ directory and run `npm install` followed by `npm start`
 
-3. similarly change to _server_ directory and run `npm init` followed by `npm install` and then `npm start`
+3. similarly change to _server_ directory and run `npm install` followed by `npm start`
 
 4. A browser tab must open which(generally opens at `localhost:3000`) would look like this :
 
