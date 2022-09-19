@@ -3,6 +3,8 @@
 Web chat app with RichText feature built using ReactJS and NodeJS
 
 <!-- ![video](/media/ChatAppDemoVideo.mov) -->
+![InitialImage](https://user-images.githubusercontent.com/37045880/190958928-52fa5844-7646-400f-b648-bb8384e52951.png)
+
 
 ## Getting Started
 
